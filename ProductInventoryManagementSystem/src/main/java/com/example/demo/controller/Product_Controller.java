@@ -28,7 +28,8 @@ public class Product_Controller {
 	@PostMapping("/save")
 	public ResponseEntity<String> Save_product(@RequestBody Product p)
 	{
-		return new ResponseEntity<String>("Product Updated", HttpStatus.OK);
+		service.SaveProduct(p);
+		return new ResponseEntity<String>("Product Saved", HttpStatus.OK);
 	}
 	
 	@GetMapping("/getProducts")
